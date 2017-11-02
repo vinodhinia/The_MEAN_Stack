@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="myController">
+<table>
+    Row Limit &nbsp;<input type="number" step="1" min="0" max="5" ng-model="rowLimit">
+    Order By <select ng-model="sortColumn">
+                <option>Name</option>
+                <option>Salary</option>
+                <option>Date Of Birthe</option>
+                <option></option>
+             </select>
+    <br/>
+    <br/>
+
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Date Of Birth</th>
+        <th>Salary(Number Filter)</th>
+        <th>Salary Currency Filter</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="emp in employee| limitTo:rowLimit">
+        <td> {{ emp.firstName | uppercase}}</td>
+        <td> {{ emp.dob | date: "mm/dd/yyyy"}}</td>
+        <td> {{ emp.salary |number : 2}}</td>
+        <td> {{ emp.salary | currency : "£"}}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

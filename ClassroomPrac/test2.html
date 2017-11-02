@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script src="app/myApp.js"></script>
+  <link rel="stylesheet" href="app/myCss.css"></script>
+  </head>
+
+  <body ng-app="myApp">
+  <div ng-controller="myAppCtrl">
+    <input type="button" ng-click="mySpice()" value="Chillin Spicy">
+
+    <input type="button" ng-click="jalSpicy()" value="Jalopeno Spicy">
+
+    <div> Spice : {{spice}} </div>
+
+    Please Enter the Class: <input type="text" ng-model="data.message">
+
+    <div class="{{data.message}}">Result oif the class to be applied</div>
+    
+  </div>
+  </body>
+  </html>

@@ -1,0 +1,21 @@
+<div id="todoPanel" class="panel">
+    <h3 class="panel-header">Flight Carriers</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Carriers</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="flight in flights">
+            <td>{{$index+1}}</td>
+            <td><a href="#/viewFlights/{{flight.name}}">{{flight.name}}</a></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>

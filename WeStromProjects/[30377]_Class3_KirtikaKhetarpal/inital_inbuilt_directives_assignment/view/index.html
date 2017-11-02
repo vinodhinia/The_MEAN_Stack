@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table View</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../myCSS.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+</head>
+
+<body ng-app="module1" ng-controller="module1Ctrl">
+<div class="page-header">
+    <h1>UCSC Demo Flight App</h1>
+</div>
+
+
+<form>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ng-model="table" ng-init="table=true">
+            {{tableTemplateMessage}}
+        </label>
+    </div>
+
+
+    <div class="checkbox">
+        {{cssMsg}}
+        <div>
+            <label>
+                <input type="checkbox" ng-model="bubble"/>
+                Bubble
+            </label>
+            <label>
+                <input type="checkbox" ng-model="textDanger"/>
+                Text-danger
+            </label>
+        </div>
+    </div>
+
+    <div>
+        <label>Please enter Airport Code to Search</label>
+        <input type="text" placeholder="Please Enter the value here" ng-model="AirportCode"/>
+    </div>
+
+   <!--
+     *****Scenerio using ng-switch ****
+    <div ng-switch on="table">
+        <div ng-switch-when="true">
+            <ng-include src="toggleTemplate()"></ng-include>
+        </div>
+        <div ng-switch-default>
+            <ng-include src="toggleTemplate()"></ng-include>
+        </div>
+    </div> -->
+
+</form>
+
+
+
+<div class="panel">
+    <ng-include src="toggleTemplate()"></ng-include>
+</div>
+
+
+<script src="../app/module3.js"></script>
+<script src="../app/module2.js"></script>
+<script src="../app/module1.js"></script>
+
+</body>
+</html>

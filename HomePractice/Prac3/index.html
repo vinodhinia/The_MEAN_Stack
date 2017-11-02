@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-controller="myController">
+
+<table>
+    <tr>
+        <td>First Name</td>
+        <td><input type="text" ng-model="employee.firstName"></td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td><input type="text" ng-model="employee.lastName" ></td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td><input type="text" ng-model="employee.gender" ></td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td><input type="text" ng-model="employee.age"></td>
+    </tr>
+</table>
+
+    First Name &nbsp; {{ employee.firstName }}
+<br/>
+    Last Name &nbsp; {{ employee.lastName }}
+<br/>
+    Gender &nbsp; {{ employee.gender }}
+<br/>
+    Age &nbsp; {{ employee.age }}
+</body>
+</html>

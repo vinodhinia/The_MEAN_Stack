@@ -1,0 +1,69 @@
+body{
+    font:100% Arial;
+    /*color: #000000;*/
+    /*background: #ffffff;*/
+}
+table{
+    text-align:left;
+    border-collapse: collapse;
+}
+tr{
+    vertical-align: top;
+}
+td, th{
+    padding: 10px;
+    border-bottom: solid;
+}
+th{
+    font-size:1em;
+    background: #5588aa;
+}
+tr:nth-of-type(odd){
+    background: lightyellow;
+}
+tr:nth-of-type(even){
+    background: lightblue;
+}
+tfoot{
+    text-align: right;
+    font-size:0.7em;
+    font-style: italic;
+    color:#5588aa;
+}
+/*caption{*/
+/*padding:10px;*/
+/*font-weight: bold;*/
+/*text-align: left;*/
+/*margin: 1px;*/
+/*}*/
+.last, tr:hover .last{
+    background: #ffffff;
+    padding:0px;
+    border:1px solid #fff;
+    color:#5588aa;
+}
+.group{
+    width:800px;
+}
+.first{
+    width:80px;
+}
+.javaclass{
+    background:#660000;
+}
+.package{
+    background: #ffffcc;
+}
+.samepkg{
+    background: #E6E6ff;
+}
+.diffpkg{
+    background: #fcf;
+}
+.world{
+    background: #ffc;
+}
+tr:hover{
+    background:#696;
+    color:#fff;
+}

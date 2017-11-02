@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="myApp.js"></script>
+  <script type="text/javascript">
+    var myApp = angular.module('controllerDemo',[]);
+
+    myApp.controller('parentController',function(){
+      this.name="John";
+      this.age=25;
+    })
+
+    myApp.controller('childController',function(){
+      this.name="Joe";
+      this.age=23;
+    })
+
+  </script>
+  </head>
+  <body ng-app="controllerDemo">
+  <div ng-controller="parentController as parent">
+  <h2>Name from the parent: {{parent.name}}</h2>
+  <h2> Age From Parent: {{parent.age}} </h2>
+    <div ng-controller="childController as child">
+     <h2> Name from the Child: {{child.name}}</h2>
+     <h2> Name from the Parent: {{parent.name}} </h2>
+      <h2> Age from the child: {{child.age}} </h2>
+    </div>
+  </div>
+  </body>
+  
+  </html>
+

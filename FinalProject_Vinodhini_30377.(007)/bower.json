@@ -1,0 +1,17 @@
+{
+  "name": "Vino",
+  "description": "Flight details",
+  "main": "FinalProject.js",
+  "authors": [
+    "Vino <vino@fileit.tax>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

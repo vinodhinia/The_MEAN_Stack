@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+
+    <script type="text/javascript">
+function somFunc(param1, param2){
+    return param1+param2
+}
+
+var somOtherFunc = somFunc;
+somFunc =  null;
+console.log(somOtherFunc(10,10));
+
+var yob = [1950,1960,1970,1980];
+function age(year) {
+    return 2017 - year;
+}
+
+function isRetired(age){
+    return age >60
+}
+
+function caller(fn,arrofYear){
+    var ages = [];
+    console.log(arrofYear)
+    for(var i=0;i<arrofYear.length ;i++){
+
+        ages.push(fn(arrofYear[i]))
+    }
+    return ages;
+}
+
+var ages = caller(age,yob);
+console.log(caller(isRetired,ages));
+
+// Function being returned as values
+function jobInterview(job) {
+    if (job === 'Developer') {
+        return function(name) {
+            console.log("This function gives the JD of a developer, " + name + " is a developer");
+        }
+    }
+    else if (job === 'musician') {
+        return function(name) {
+            console.log("This function gives the JD of a musician, " + name + "is a musician");
+        }
+    }
+}
+
+var johnAsDeveloper = jobInterview('Developer')("John");
+var AsDeveloper = jobInterview('Developer')("John");
+
+
+function func1(){
+    return func2;
+}
+
+frunc2 = function (){
+    console.log("This in from Function 2")
+}
+
+
+var obj1 = {
+    name: "John",
+    title: "MEAN Stack",
+    whoamI : function(address,dob){
+        console.log("Hi I am "+this.name +"and my job title is "+this.title+"I live in  "+this.address + "I was born in the year"+this.dob);
+}
+};
+//obj1.whoamI();
+
+var obj2 = {
+    name :"mark",
+    title:"Developer",
+
+
+}
+obj2.defineMe = obj1.whoamI;
+obj2.defineMe("SF",1991);
+
+obj1.whoamI.call(obj2,"Morgan Hill",1984);
+obj1.whoamI.apply(obj2,["India",1982]);
+    </script>
+    </body></head>
+</html>

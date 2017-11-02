@@ -1,0 +1,20 @@
+{
+  "name": "Vino",
+  "authors": [
+    "Vino <vino@fileit.tax>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.4"
+  }
+}

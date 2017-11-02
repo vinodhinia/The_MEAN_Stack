@@ -1,0 +1,26 @@
+<script type="text/ng-template" id="scopeTemplate">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Ident</th>
+            <th>Type</th>
+            <th>From</th>
+            <th>Arrive</th>
+            <th>Code</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="flight in flights">
+            <td>{{flight.ident}}</td>
+            <td>{{flight.code}}</td>
+            <td>{{flight.dep}}</td>
+            <td>{{flight.arriv}}</td>
+            <td>{{flight.code }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</script>
+

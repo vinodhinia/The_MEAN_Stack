@@ -1,0 +1,16 @@
+<!--
+       Note: Using ng-hide to display flights which have the Airport Code:  John F Kennedy Intl.
+
+    <ul ng-repeat="flight in flights" ng-class-even="{'bubble':bubble,'text-danger':textDanger}"
+    ng-hide="flight.code != 'John F Kennedy Intl (KJFK)'"> -->
+
+
+<ul ng-repeat="flight in flights|filter:AirportCode" ng-class-even="{'bubble':bubble,'text-danger':textDanger}">
+    <li>{{flight.ident}} </li>
+    <li>{{flight.code}} </li>
+    <li>{{flight.dep}} </li>
+    <li>{{flight.arriv}} </li>
+    <li>{{flight.code|justCode }}</li>
+    <hr>
+</ul>
+

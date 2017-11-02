@@ -1,0 +1,48 @@
+<html ng-app="exampleApp">
+<head>
+    <title>Directives</title>
+    <script src="../../../bower_components/angular/angular.js"></script>
+    <link href="../../../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../../../bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <script>
+        angular.module("exampleApp", [])
+                .controller("defaultCtrl", function ($scope) {
+                    $scope.products = [
+                        { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
+                        { name: "Bananas", category: "Fruit", price: 2.42, expiry: 7 },
+                        { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 }
+                    ];
+                }).directive('unorderedList', function () {
+                    return function (scope, ele, attr) {
+                        var data = scope[attr["unorderedList"]];
+                        var key = attr["key"];
+                        if (angular.isArray(data)) {
+                            var listItem = angular.element('<ul>');
+                            ele.append(listItem);
+                            for (var i = 0; i < data.length; i++) {
+                                console.log(scope.$eval(key, data[i]));
+                                var result = scope.$eval(key, data[i]);
+                                listItem.append(angular.element('<li>').text(result));
+
+                            }
+
+                        }
+
+
+                    }
+                });
+
+
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Products</h3>
+    </div>
+    <div class="panel-body">
+        <div unordered-list="products" key="price| currency"></div>
+    </div>
+</div>
+</body>
+</html>
